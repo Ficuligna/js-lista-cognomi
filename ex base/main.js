@@ -15,6 +15,10 @@ surnameList.push(addSurname);
 
 // ordinamento alfabetico array
 surnameList.sort();
+console.log(surnameList);
+
+// ottengo indice del nuovo item in array ordinato
+var indexNewItem = surnameList.indexOf(addSurname)
 
 // stampa a schermo
-document.getElementById("ciao").innerHTML = surnameList;
+document.getElementById("ciao").innerHTML = surnameList + "<br>" + "La posizione ordinata del nuovo cognome è la numero: " + (indexNewItem + 1);
