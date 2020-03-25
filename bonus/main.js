@@ -1,6 +1,6 @@
 
 // dichiarazione array
-var surnameList = ["Matonti", "Icardi","Giuseppe","Luigi", "Jessica"];
+var surnameList = ["Matonti", "Icardi","Luigi", "Jessica","Giuseppe"];
 
 // dichiarazione nuovo item
 var addSurname = prompt("aggiungi nuovo cognome alla lista");
@@ -55,7 +55,7 @@ function confronto(parole){
           //Se maggiore =
           console.log("questo è la lunghezza di array parole " + parole.length);
           if (parole[v][b] > parole[n][b]) {
-            console.log("questo è il soggetto di paragone " + parole[v][b] + "questo è l'oggetto di paragone " + parole[n][b]);
+            console.log("questo è il soggetto di paragone " + parole[v][b] + " questo è l'oggetto di paragone " + parole[n][b]);
             isLessThen = false;
           // Se le prime due lettere hanno stesso valore
         // }else if (parole[v][b] == parole[n][b]) {
@@ -75,11 +75,15 @@ function confronto(parole){
         //Soluzione
         if (isLessThen) {
           contatoreCondizione++;
-          console.log("questo è lo slice " + parole.slice(v,(v+1)));
+          console.log(" slice " + parole.slice(v,(v+1)));
           var itemOrdinato = parole.slice(v,(v+1));
           listaOrdinata[contatoreCondizione] = itemOrdinato;
           console.log("questa è la lista ordinata " + listaOrdinata);
+          console.log("questo è l'ultimo item " + listaOrdinata[contatoreCondizione]);
+          b = parole[v].length;
+
           parole = parole.slice(0, v).concat(parole.slice(v + 1, parole.length));
+          console.log("Array parole " + parole);
           v = 0;
 
         }
