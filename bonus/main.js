@@ -40,37 +40,54 @@ function ordinamelo(array){
 //  Realizzazione funzione di confronto tra valori numerici
 function confronto(parole){
   var listaOrdinata = [];
+  var contatoreCondizione = -1;
+
   // per selezionare l'array soggetto da confrontare
-  for (var i = 0; i < parole.length; i++) {
-    parole[i];
+  for (var v = 0; v < parole.length; v++) {
+    parole[v];
     // per selezionare l'array paragone
-      for (var j = 0; j < parole.length; j++) {
-        parole[i][j];
+      for (var b = 0; b < parole[v].length; b++) {
+        parole[v][b];
         var isLessThen = true;
 
-        for (var k = 0; k < parole.length; k++) {
+        for (var n = 0; n < parole.length; n++) {
           //Se maggiore =
-          if (parole[i][j] > parole[k][j]) {
-            console.log(parole[i][k]);
+          console.log("questo è la lunghezza di array parole " + parole.length);
+          if (parole[v][b] > parole[n][b]) {
+            console.log("questo è il soggetto di paragone " + parole[v][b] + "questo è l'oggetto di paragone " + parole[n][b]);
             isLessThen = false;
           // Se le prime due lettere hanno stesso valore
-          }else if (parole[i][j] == parole[k][j]) {
-            for (var h=j; h < parole[i].length; h++) {
-              if (parole[i][h] > parole[k][h]);
-              isLessThen = false;
-            }
+        // }else if (parole[v][b] == parole[n][b]) {
+        //     for (var h=b; h < parole[v].length; h++) {
+        //       if (parole[v][h] > parole[n][h]);
+        //       isLessThen = false;
+        //     }
             // DA IMPLEMENTARE CON CASI LIMITE
           }
         }
+        console.log("questa è la condizione di precedenza" + isLessThen);
 
+        if (isLessThen === false) {
+          b = parole[v].length;
+        }
+
+        //Creazione di una variabile che si incrementa solo quando a questo punto il valore di "isLessThen" è true
+        //Soluzione
+        if (isLessThen) {
+          contatoreCondizione++
+          console.log("questo è lo slice " + parole.slice(v,(v+1)));
+          var itemOrdinato = parole.slice(v,(v+1));
+          listaOrdinata[contatoreCondizione] = itemOrdinato;
+          console.log("questa è la lista ordinata " + listaOrdinata);
+
+        }
       }
-      var itemOrdinato = parole.slice(i,(i+1));
-      if (isLessThen) {
-        listaOrdinata[i] = itemOrdinato;
-      }
+      // var itemOrdinato = parole.slice(v,(v+1));
+      // if (isLessThen) {
+      //   listaOrdinata[v] = itemOrdinato;
+      // }
 
     }
-  console.log("questa è la lista ordinata " + listaOrdinata);
 }
 
 // funzione per ottenere la posizione
