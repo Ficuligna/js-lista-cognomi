@@ -1,6 +1,6 @@
 
 // dichiarazione array
-var surnameList = ["Matonti", "Icardi"];
+var surnameList = ["Matonti", "Icardi","Giuseppe","Luigi", "Jessica"];
 
 // dichiarazione nuovo item
 var addSurname = prompt("aggiungi nuovo cognome alla lista");
@@ -40,6 +40,7 @@ function ordinamelo(array){
 //  Realizzazione funzione di confronto tra valori numerici
 function confronto(parole){
   var listaOrdinata = [];
+  //Creazione di una variabile che si incrementa solo quando a questo punto il valore di "isLessThen" è true
   var contatoreCondizione = -1;
 
   // per selezionare l'array soggetto da confrontare
@@ -71,14 +72,15 @@ function confronto(parole){
           b = parole[v].length;
         }
 
-        //Creazione di una variabile che si incrementa solo quando a questo punto il valore di "isLessThen" è true
         //Soluzione
         if (isLessThen) {
-          contatoreCondizione++
+          contatoreCondizione++;
           console.log("questo è lo slice " + parole.slice(v,(v+1)));
           var itemOrdinato = parole.slice(v,(v+1));
           listaOrdinata[contatoreCondizione] = itemOrdinato;
           console.log("questa è la lista ordinata " + listaOrdinata);
+          parole = parole.slice(0, v).concat(parole.slice(v + 1, parole.length));
+          v = 0;
 
         }
       }
